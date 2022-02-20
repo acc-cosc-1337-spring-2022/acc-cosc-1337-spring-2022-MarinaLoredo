@@ -1,5 +1,4 @@
 #include "decisions.h"
-#include<string>
 //write include statement for decisions header
 
 //Write code for function get_grade_points that accepts a string letter_grade and returns 
@@ -10,57 +9,40 @@
 //given grade "D" returns 1
 //given grade "F" returns 0
 //another other value return -1
-std::string get_letter_grade_using_if(int grade)
+int get_grade_points(std::string letter_grade)
 {
-	if (grade > 100 || grade < 0) 
+	if (letter_grade == "A") 
 	{
-		return "Invalid Grade";
+		return 4;
 	}
-	else if(grade > 90) 
+	else if(letter_grade == "B") 
 	{
-		return "A";
+		return 3;
 	}
-	else if (grade > 80)
+	else if (letter_grade == "C")
 	{
-		return "B";
+		return 2;
 	}
-	else if (grade > 70)
+	else if (letter_grade == "D")
 	{
-		return "C";
+		return 1;
 	}
-	else if (grade > 60)
+	else if (letter_grade == "F")
 	{
-		return "D";
+		return 0;
 	}
-	else
+	else 
 	{
-		return "F";
+		return -1;
 	}
-
 }
 
 
-std::string get_letter_grade_using_switch(int grade)
+//Write code for function calculate_gpa that accepts an int named credit_hours and
+//a double named credit_points.  The function returns the quotient of credit_points divided by
+//credit_hours. In the function account for division by zero by returning a -1.
+double calculate_gpa(int credit_hours, double credit_points)
 {
-	switch(grade)
-	{
-		case 90 ... 100:
-			return "A";
-			break; 
-		case 80 ... 89:
-			return "B";
-			break;
-		case 70 ... 79:
-			return "C";
-			break;
-		case 60 ... 69:
-			return "D";
-			break; 
-		case 0 ... 59:
-			return "F";
-			break;
-		default:
-			return "Invalid Grade";
-			break;
-	}
+	return credit_points / credit_hours;
 }
+
