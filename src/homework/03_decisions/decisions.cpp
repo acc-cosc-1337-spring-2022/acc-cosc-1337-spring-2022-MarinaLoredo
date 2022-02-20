@@ -12,7 +12,11 @@
 //another other value return -1
 std::string get_letter_grade_using_if(int grade)
 {
-	if(grade > 90) 
+	if (grade > 100 || grade < 0) 
+	{
+		return "Invalid Grade";
+	}
+	else if(grade > 90) 
 	{
 		return "A";
 	}
@@ -51,9 +55,12 @@ std::string get_letter_grade_using_switch(int grade)
 			break;
 		case 60 ... 69:
 			return "D";
+			break; 
+		case 0 ... 59:
+			return "F";
 			break;
 		default:
-			return "F";
+			return "Invalid Grade";
 			break;
 	}
 }
