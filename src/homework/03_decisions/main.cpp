@@ -6,32 +6,47 @@ using std::cout; using std::cin; using std::string;
 
 int main() 
 {
-	int grade;
-	cout << "\nEnter numerical grade: ";
-	cin >> grade;
+	int choose;
+	cout << "Enter number from menu to use:\n1. If\n2.Switch\n";
+	cin >> choose;
 
-	if(grade < 101 && grade > 0)
+	if (choose == 1)
 	{
-		string letter_if = get_letter_grade_using_if(grade);
-		cout << "Letter grade based on 'if' function: " << letter_if;
+		int grade;
+		cout << "\nEnter numerical grade: ";
+		cin >> grade;
+
+		if(grade < 101 && grade > 0)
+		{
+			string letter_if = get_letter_grade_using_if(grade);
+			cout << "Letter grade based on 'if' function: " << letter_if;
+		}
+		else
+		{
+			cout << "That grade is not valid.";
+		}
+	}
+
+	else if (choose == 2)	
+	{
+		int grade;
+		cout << "\nEnter numerical grade: ";
+		cin >> grade;
+		
+		if(!(grade < 0 || grade > 100))
+		{
+			string letter_switch = get_letter_grade_using_switch(grade);
+			cout << "\nLetter grade based on 'switch' function: " << letter_switch;
+		}
+		else
+		{
+			cout << "That grade is not valid.";
+		}	
 	}
 	else
 	{
-		cout << "That grade is not valid";
+		cout << "Menu choice invalid.";
 	}
 	
-	cout << "\nEnter numerical grade: ";
-	cin >> grade;
-	
-	if(!(grade < 0 || grade > 100))
-	{
-		string letter_switch = get_letter_grade_using_switch(grade);
-		cout << "\nLetter grade based on 'switch' function: " << letter_switch;
-	}
-	else
-	{
-		cout << "That grade is not valid";
-	}	
-
 	return 0;
 }
