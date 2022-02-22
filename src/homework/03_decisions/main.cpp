@@ -1,6 +1,11 @@
+#include<iostream>
+#include<string>
+using std::cout; using std::cin; using std::string;
+//write include statements
+#include "decisions.h"
+
 int main() 
 {
-hw-03-decisions
 	int choose;
 	cout << "Enter number from menu to use:\n1. If\n2.Switch\n";
 	cin >> choose;
@@ -43,3 +48,5 @@ hw-03-decisions
 		cout << "Menu choice invalid.";
 	}
 	
+	return 0;
+}
