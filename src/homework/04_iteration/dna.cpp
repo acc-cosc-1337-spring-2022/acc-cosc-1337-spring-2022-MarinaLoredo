@@ -1,7 +1,7 @@
 #include "dna.h"
 #include<iostream>
 
-using std::cout; using std::cin;
+using std::cout; using std::cin; using std::string;
 
 void menu_options()
 {
@@ -23,8 +23,9 @@ void menu()
             handle_menu(menu_selection);
         }
         else if (menu_selection == 3){
-            auto confirm = "n";
+            string confirm = "n";
             cout << "Are you sure you would like to exit? (y/n): ";
+            cin >> confirm;
             if (confirm == "y") {
                 cout << "Thank you! Have a nice day!";
             }
