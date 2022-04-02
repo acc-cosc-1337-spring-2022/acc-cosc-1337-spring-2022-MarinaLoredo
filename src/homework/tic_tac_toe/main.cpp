@@ -16,7 +16,8 @@ int main()
         {
           first_player[i] = toupper(first_player[i]);
         }
-        while (first_player != "X" && first_player != "O") {
+        while (first_player != "X" && first_player != "O") 
+        {
             cout << "Invalid entry!\n";
             cout << "Entry must be an X or O. \n\n";
             cout << "Enter first player (X or O): ";
@@ -28,7 +29,8 @@ int main()
         }
         game.start_game(first_player);
 
-        while (!game.game_over()) {  // end program & game over
+        while (!game.game_over()) 
+        {
             cout << "Enter position [1-9]: ";
             cin >> position;
             game.mark_board(position);
