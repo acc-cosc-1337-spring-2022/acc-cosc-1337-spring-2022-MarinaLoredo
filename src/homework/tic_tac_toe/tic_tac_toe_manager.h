@@ -1,24 +1,25 @@
 #include <iostream>
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_data.h"
 #include <string>
 #include <vector>
 #include <memory>
 using std::unique_ptr;
 using std::make_unique;
 
-//Header Guards
 #ifndef TIC_TAC_TOE_MANAGER_H
 #define TIC_TAC_TOE_MANAGER_H
 
-class TicTacToeManager
+class TicTacToeManager : public TicTacToe
 {
 
-
 public: 
+    TicTacToeManager() = default;
+    TicTacToeManager(TicTacToeData results);
     void save_game(unique_ptr<TicTacToe>& b);
     void get_winner_total(int& o, int& w, int& t);
     friend std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager);
-
+    ~TicTacToeManager();
 private:
     std::vector<unique_ptr<TicTacToe>> games;
 

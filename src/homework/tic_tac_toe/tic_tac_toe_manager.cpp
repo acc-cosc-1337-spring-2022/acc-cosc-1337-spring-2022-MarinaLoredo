@@ -1,4 +1,5 @@
 #include "tic_tac_toe_manager.h"
+#include "tic_tac_toe_data.h"
 using std::string; using std::cout;
 
 void TicTacToeManager::save_game(unique_ptr<TicTacToe> &b)
@@ -42,5 +43,14 @@ void TicTacToeManager::update_winner_count(std::string winner)
     else
     {
         ties += 1; 
+    }
+}
+
+TicTacToeManager::TicTacToeManager(TicTacToeData& results): data{results}
+{
+    games = results.get_games();
+    for(auto& game: games) 
+    {
+        update_winner_count(game -> get_winner());
     }
 }

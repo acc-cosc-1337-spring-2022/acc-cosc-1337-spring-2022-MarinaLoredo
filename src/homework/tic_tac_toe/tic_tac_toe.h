@@ -16,12 +16,13 @@ friend std::istream& operator>>(std::istream& in, TicTacToe& game);
 public:
     TicTacToe(){}
     TicTacToe(int size): pegs(size * size, " "){};
+    TicTacToe(std::vector <std::string> p, std::string win): pegs(p), winner(win){};
     bool game_over();
     void start_game(std::string first_player);
     void mark_board(int position);
     std::string get_player() const{return player;}
-    // void display_board() const;
     std::string get_winner() {return winner;};
+    std::vector <std::string> get_pegs() const {return pegs;}; //*
 
 protected:
     std::vector<std::string> pegs;

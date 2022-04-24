@@ -2,6 +2,7 @@
 #include "tic_tac_toe_manager.h"
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h"
+#include "tic_tac_toe_data.h"
 
 
 using std::cout; using std::cin; using std::string;
@@ -10,7 +11,9 @@ int main()
 {
 
     unique_ptr <TicTacToe> game;
-    TicTacToeManager manager;
+    TicTacToeData data;
+    TicTacToeManager manager = TicTacToeManager(data);
+    
     string first_player;
     char choice;
     int o, w, t; 
@@ -63,12 +66,12 @@ int main()
         manager.save_game(game);
         manager.get_winner_total(o, w, t);
 
-        cout << "Continue type Y: ";
+        cout << "Press Y to play: ";
         cin >> choice;
 
     } while (choice == 'Y' || choice == 'y');
     
-    cout << " \n Every Game Played";
+    cout << "\n Every Game Played";
     cout << manager;
 
     return 0;
