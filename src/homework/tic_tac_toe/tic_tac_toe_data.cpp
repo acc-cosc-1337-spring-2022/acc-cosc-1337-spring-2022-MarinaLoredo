@@ -18,12 +18,12 @@ void TicTacToeData::save_games(std::vector <std::unique_ptr<TicTacToe>>& games)
             save_file << game -> get_winner() << "\n";
         }
     }
-    writer.close();
+    save_file.close();
 }
 
 std::vector <std::unique_ptr<TicTacToe>> TicTacToeData::get_games()
 {
-    std::vector <std:unique_ptr<TicTacToe>> boards;
+    std::vector <std::unique_ptr<TicTacToe>> boards;
     std::ifstream retrieve_saves;
     retrieve_saves.open("saved_games.txt");
     std::string line;
